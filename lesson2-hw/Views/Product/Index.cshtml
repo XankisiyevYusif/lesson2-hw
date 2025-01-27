@@ -1,0 +1,28 @@
+﻿@model ProductsViewModel
+
+<h1 class="text-center">
+    We have @Model.Products.Count() products
+</h1>
+
+<div class="container">
+    <div class="row">
+        @foreach (var item in Model.Products)
+        {
+            <div class="col-md-4">
+                <div class="card mb-4 shadow-sm">
+                    <div class="card-body">
+                        <h5 class="card-title">ID: @item.Id</h5>
+                        <h6 class="card-subtitle mb-2 text-muted">Name: @item.Name</h6>
+                        <p class="card-text">Description: @item.Description</p>
+                        <p class="card-text">Price: @item.Pirce</p>
+                        <p class="card-text">Discount: @item.Discount</p>
+                        
+                        <a asp-controller="Product" asp-action="Delete" asp-route-id="@item.Id" class="btn btn-outline-danger">Delete Product</a>
+                        <a asp-controller="Product" asp-action="Update" asp-route-id="@item.Id" class="btn btn-outline-success">Update</a>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+    <a class="btn btn-outline-success" href="/product/add">Add New Product</a>
+</div>

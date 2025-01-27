@@ -1,0 +1,24 @@
+﻿@model lesson2_hw.Models.ProductAddViewModel
+
+<h2>Ürün Güncelle</h2>
+
+<form asp-controller="Product" asp-action="Update" method="post">
+    <input type="hidden" asp-for="Product.Id" />
+    <div>
+        <label asp-for="Product.Name"></label>
+        <input asp-for="Product.Name" />
+    </div>
+    <div>
+        <label asp-for="Product.Description"></label>
+        <input asp-for="Product.Description" />
+    </div>
+    <div>
+        <label asp-for="Product.Pirce"></label>
+        <input asp-for="Product.Pirce" />
+    </div>
+    <div>
+        <label asp-for="Product.Discount"></label>
+        <input asp-for="Product.Discount" />
+    </div>
+    <button type="submit">Güncelle</button>
+</form>
