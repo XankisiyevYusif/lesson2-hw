@@ -51,7 +51,6 @@ namespace lesson2_hw.Controllers
             if (item != null)
             {
                 products.Remove(item);
-                TempData["Message"] = $"{item.Name} employee deleted successfully";
             }
             return RedirectToAction("Index");
         }
@@ -115,6 +114,5 @@ namespace lesson2_hw.Controllers
 
             return View(model);
         }
-
     }
 }
